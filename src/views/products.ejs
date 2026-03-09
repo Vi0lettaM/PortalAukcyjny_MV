@@ -1,0 +1,22 @@
+<h2>Produkty</h2>
+
+<form method="GET">
+    <input name="search" placeholder="Szukaj">
+    <select name="sort">
+        <option value="priceAsc">Cena ↑</option>
+        <option value="priceDesc">Cena ↓</option>
+    </select>
+    <button>Filtruj</button>
+</form>
+
+<% products.forEach(p=> { %>
+    <div style="border:1px solid black; margin:10px;">
+        <h3>
+            <%= p.title %>
+        </h3>
+        <p>
+            <%= p.price %> zł
+        </p>
+        <a href="/products/<%= p._id %>">Szczegóły</a>
+    </div>
+    <% }) %>

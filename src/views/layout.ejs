@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Portal Aukcyjny</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/products">Produkty</a>
+
+        <% if (session && session.user) { %>
+            <span>Zalogowany: <%= session.user.username %> (<%= session.user.role %>)</span>
+            <a href="/logout">Wyloguj</a>
+            <% } else { %>
+                <a href="/login">Login</a>
+                <a href="/register">Rejestracja</a>
+                <% } %>
+    </nav>
+
+    <hr>
+
+    <%- body %>
+
+</body>
+
+</html>
